@@ -348,36 +348,6 @@
     .contact-item-text a:hover { color: var(--accent); }
     .contact-item-text span { color: var(--gray); font-size: 0.95rem; }
 
-    /* Form */
-    .contact-form-wrap {
-      background: var(--white);
-      border-radius: 16px;
-      padding: 40px;
-      box-shadow: var(--shadow);
-    }
-    .contact-form-wrap h3 { font-size: 1.4rem; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
-    .contact-form-wrap > p { color: var(--gray); font-size: 0.9rem; margin-bottom: 28px; }
-    .form-group { margin-bottom: 18px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
-    input, textarea, select {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1.5px solid #D1D5DB;
-      border-radius: var(--radius);
-      font-family: inherit;
-      font-size: 0.95rem;
-      color: var(--gray-dk);
-      transition: border-color 0.2s;
-      background: var(--white);
-    }
-    input:focus, textarea:focus, select:focus {
-      outline: none;
-      border-color: var(--blue);
-      box-shadow: 0 0 0 3px rgba(26,58,92,0.1);
-    }
-    textarea { resize: vertical; min-height: 110px; }
-    .form-submit { width: 100%; padding: 16px; font-size: 1rem; font-weight: 700; margin-top: 6px; }
 
     /* ── FOOTER ── */
     footer {
@@ -666,81 +636,39 @@
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">Get Your Free Estimate</h2>
-        <p class="section-sub">Fill out the form or give us a call — we'll get back to you within one business day.</p>
+        <p class="section-sub">Give us a call — we'll get back to you within one business day.</p>
       </div>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h2>We'd love to hear from you</h2>
-          <p>Reach out for a no-pressure, free roof inspection and estimate. Proudly serving San Antonio and surrounding areas.</p>
-
-          <div class="contact-item">
-            <div class="contact-item-icon">
-              <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5.5A2.5 2.5 0 015.5 3h.879a1 1 0 01.958.713l1.076 3.59a1 1 0 01-.29 1.03l-1.223 1.018a11.05 11.05 0 005.75 5.75l1.018-1.223a1 1 0 011.03-.29l3.59 1.076A1 1 0 0121 15.621V16.5A2.5 2.5 0 0118.5 19h-.5C9.163 19 3 12.837 3 6v-.5z"/></svg>
-            </div>
-            <div class="contact-item-text">
-              <strong>Phone</strong>
-              <a href="tel:2104962256">(210) 496-2256</a>
-            </div>
+      <div style="display:flex; flex-wrap:wrap; gap:24px; justify-content:center;">
+        <div class="contact-item" style="background:var(--white);border-radius:12px;padding:28px 32px;box-shadow:var(--shadow);align-items:center;">
+          <div class="contact-item-icon">
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5.5A2.5 2.5 0 015.5 3h.879a1 1 0 01.958.713l1.076 3.59a1 1 0 01-.29 1.03l-1.223 1.018a11.05 11.05 0 005.75 5.75l1.018-1.223a1 1 0 011.03-.29l3.59 1.076A1 1 0 0121 15.621V16.5A2.5 2.5 0 0118.5 19h-.5C9.163 19 3 12.837 3 6v-.5z"/></svg>
           </div>
-
-          <div class="contact-item">
-            <div class="contact-item-icon">
-              <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-            </div>
-            <div class="contact-item-text">
-              <strong>Location</strong>
-              <span>San Antonio, Texas &amp; Surrounding Areas</span>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-item-icon">
-              <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            </div>
-            <div class="contact-item-text">
-              <strong>Hours</strong>
-              <span>Monday – Saturday: 7:00 AM – 6:00 PM</span>
-            </div>
+          <div class="contact-item-text">
+            <strong>Phone</strong>
+            <a href="tel:2104962256">(210) 496-2256</a>
           </div>
         </div>
-
-        <div class="contact-form-wrap">
-          <h3>Request a Free Estimate</h3>
-          <p>No obligation — just honest answers and a fair price.</p>
-          <form id="quoteForm" onsubmit="handleSubmit(event)">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="firstName">First Name *</label>
-                <input type="text" id="firstName" name="firstName" placeholder="John" required />
-              </div>
-              <div class="form-group">
-                <label for="lastName">Last Name</label>
-                <input type="text" id="lastName" name="lastName" placeholder="Smith" />
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone Number *</label>
-              <input type="tel" id="phone" name="phone" placeholder="(210) 555-0000" required />
-            </div>
-            <div class="form-group">
-              <label for="service">Service Needed</label>
-              <select id="service" name="service">
-                <option value="">Select a service…</option>
-                <option>Roof Installation</option>
-                <option>Roof Replacement</option>
-                <option>Roof Repair / Maintenance</option>
-                <option>Commercial Roofing</option>
-                <option>Free Inspection</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Tell Us About Your Project</label>
-              <textarea id="message" name="message" placeholder="Describe your roofing needs, approximate roof size, or any concerns…"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary form-submit">Send My Free Estimate Request</button>
-          </form>
+        <div class="contact-item" style="background:var(--white);border-radius:12px;padding:28px 32px;box-shadow:var(--shadow);align-items:center;">
+          <div class="contact-item-icon">
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div class="contact-item-text">
+            <strong>Location</strong>
+            <span>San Antonio, Texas &amp; Surrounding Areas</span>
+          </div>
         </div>
+        <div class="contact-item" style="background:var(--white);border-radius:12px;padding:28px 32px;box-shadow:var(--shadow);align-items:center;">
+          <div class="contact-item-icon">
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div class="contact-item-text">
+            <strong>Hours</strong>
+            <span>Monday – Saturday: 7:00 AM – 6:00 PM</span>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:40px;">
+        <a href="tel:2104962256" class="btn btn-primary" style="font-size:1.1rem;padding:16px 40px;">Call (210) 496-2256</a>
       </div>
     </div>
   </section>
@@ -793,15 +721,6 @@
       navbar.classList.toggle('scrolled', window.scrollY > 40);
     });
 
-    // Form handler (replace with your backend/form service)
-    function handleSubmit(e) {
-      e.preventDefault();
-      const btn = e.target.querySelector('.form-submit');
-      btn.textContent = 'Thank you! We\'ll be in touch soon.';
-      btn.style.background = '#2d6a4f';
-      btn.disabled = true;
-      // Wire up to Formspree, Netlify Forms, or your backend here
-    }
   </script>
 </body>
 </html>
